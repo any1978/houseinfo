@@ -1,0 +1,34 @@
+<h1><%= @houseinfo.name %>の物件詳細</h1>
+<p class = "subject">物件名:</p>
+<%= @houseinfo.name %>
+
+<p class = "subject">賃料:</p>
+<%= @houseinfo.rent %>
+
+<p class = "subject">住所:</p>
+<%= @houseinfo.address %>
+
+<p class = "subject">築年数:</p>
+<%= @houseinfo.age %>
+
+<p class = "subject"> 備考:</p>
+<%= @houseinfo.note %>
+
+
+<% @houseinfo.nearstations.each_with_index do |nearstation, index| %>
+    <h2>最寄り駅<%= index + 1 %></h2>
+
+    <div class="nearstation_routename"> 路線名
+    <%= nearstation.routename %>
+    </div>
+
+    <div class="nearstation_station">駅名
+    <%= nearstation.station %>
+    </div>
+
+    <div class="nearstation_minutes">徒歩分数
+    <%= nearstation.minutes %>
+    </div>
+<% end %>
+
+

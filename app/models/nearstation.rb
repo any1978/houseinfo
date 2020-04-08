@@ -1,3 +1,6 @@
 class Nearstation < ApplicationRecord
-  belongs_to :user
+  belongs_to :houseinfo
+  
+
+
 end
