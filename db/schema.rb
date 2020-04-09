@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2020_04_08_024752) do
     t.string "routename"
     t.string "station"
     t.integer "minutes"
-    t.integer "user_id"
+    t.integer "houseinfo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_nearstations_on_user_id"
+    t.index ["houseinfo_id"], name: "index_nearstations_on_houseinfo_id"
   end
 
 end

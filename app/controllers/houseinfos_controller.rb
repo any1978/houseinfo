@@ -1,12 +1,12 @@
 class HouseinfosController < ApplicationController
-    before_action :set_houseinfo, only: [:show, :edit, :update, :destroy]
+    before_action only: [:show, :edit, :new, :update, :destroy]
   
     def index
       @houseinfos = Houseinfo.all
     end
   
     def new
-        @houseinfo =  Houseinfo.new
+        @houseinfo = Houseinfo.new
         2.times { @houseinfo.nearstations.build }
         # @houseinfo.nearstation.build
     end
@@ -23,12 +23,11 @@ class HouseinfosController < ApplicationController
     
     
     def show
-      @houseinfo = Houseinfo.find(params[:id])
       @nearstations = @houseinfo.nearstations
     end
   
     def edit
-        @houseinfo = Houseinfo.find(params[:id])
+      @houseinfo.nearstations.build
     end
 
     def update
@@ -50,6 +49,7 @@ class HouseinfosController < ApplicationController
       render :new if @houseinfo.invalid?
       # redirect_to user_path(current_user.id), notice: "ブログを編集しました！" if @blog.invalid?   
     end 
+
   
     private
   
@@ -60,6 +60,7 @@ class HouseinfosController < ApplicationController
   
     # idをキーとして値を取得するメソッドを追加
     def set_houseinfo
+      # binding.irb
       @houseinfo = Houseinfo.find(params[:id])
     end
 

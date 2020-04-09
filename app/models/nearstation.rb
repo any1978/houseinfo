@@ -1,5 +1,5 @@
 class Nearstation < ApplicationRecord
-  belongs_to :houseinfo
+  belongs_to :houseinfo, optional: true
   
 
 

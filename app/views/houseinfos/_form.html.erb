@@ -31,12 +31,12 @@
 
     <div class="houseinfo_note">
       <%= form.label :備考欄 %>
-      <%= form.text_field :note %>
+      <%= form.text_area :note ,rows: 5 %>
     </div>
 
     <div>
     <% @houseinfo.nearstations.each_with_index do |nearstation, index| %>
-        <%= f.fields_for :nearstations, nearstation do |s| %>
+        <%= form.fields_for :nearstations, nearstation do |s| %>
         <h2>最寄り駅<%= index + 1 %></h2>
 
         <div class="nearstation_routename">
