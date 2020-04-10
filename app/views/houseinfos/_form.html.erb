@@ -35,9 +35,9 @@
     </div>
 
     <div>
-    <% @houseinfo.nearstations.each_with_index do |nearstation, index| %>
+    <% @houseinfo.nearstations.each_with_index do |nearstation, i| %>
         <%= form.fields_for :nearstations, nearstation do |s| %>
-        <h2>最寄り駅<%= index + 1 %></h2>
+        <h2>最寄り駅<%= i + 1 %></h2>
 
         <div class="subject">
         <%= s.label :路線名： %><br>
