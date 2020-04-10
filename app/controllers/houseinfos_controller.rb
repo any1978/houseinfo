@@ -7,7 +7,7 @@ class HouseinfosController < ApplicationController
   
     def new
       @houseinfo = Houseinfo.new
-      2.times { @houseinfo.nearstations.build }
+      2.times { @houseinfo.nearstations.new }
       # @houseinfo.nearstation.build
     end
   
@@ -31,7 +31,7 @@ class HouseinfosController < ApplicationController
   
     def edit
       @houseinfo = Houseinfo.find(params[:id])
-      @houseinfo.nearstations.build
+      @houseinfo.nearstations.new
       # 2.times { @houseinfo.nearstations.build }
       # redirect_to houseinfos_path, notice: "物件情報を編集しました！"
     end
