@@ -1,2 +1,3 @@
-<h2>Edit a houseinfo</h2>
-<%= render 'form', houseinfo: @houseinfo, nearstation: @nearstation %>
+<h1>物件情報を編集する</h1>
+<%= render 'form',houseinfo: @houseinfo, nearstation: @nearstation %>    <%# houseinfo: @houseinfo, nearstation: @nearstation%>
+<%= link_to '一覧に戻る', houseinfos_path %>

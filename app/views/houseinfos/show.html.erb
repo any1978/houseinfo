@@ -1,34 +1,19 @@
+
 <h1><%= @houseinfo.name %>の物件詳細</h1>
-<p class = "subject">物件名:</p>
-<%= @houseinfo.name %>
-
-<p class = "subject">賃料:</p>
-<%= @houseinfo.rent %>
-
-<p class = "subject">住所:</p>
-<%= @houseinfo.address %>
-
-<p class = "subject">築年数:</p>
-<%= @houseinfo.age %>
-
-<p class = "subject"> 備考:</p>
-<%= @houseinfo.note %>
+    <li class = "subject">物件名: <%= @houseinfo.name %></li>
+    <li class = "subject">賃料: <%= @houseinfo.rent %>円</li>
+    <li class = "subject">住所: <%= @houseinfo.address %></li>
+    <li class = "subject">築年数: <%= @houseinfo.age %>年</li>
+    <li class = "subject"> 備考: <%= @houseinfo.note %></li>
 
 
-<% @houseinfo.nearstations.each_with_index do |nearstation, index| %>
-    <h2>最寄り駅<%= index + 1 %></h2>
-
-    <div class="nearstation_routename"> 路線名
-    <%= nearstation.routename %>
-    </div>
-
-    <div class="nearstation_station">駅名
-    <%= nearstation.station %>
-    </div>
-
-    <div class="nearstation_minutes">徒歩分数
-    <%= nearstation.minutes %>
-    </div>
+<% @houseinfo.nearstations.each_with_index do |nearstation, i| %>
+    <h2>最寄り駅 <%= i + 1 %></h2>
+    <li class = "subject">路線名：<%= nearstation.routename %></li>
+    <li class = "subject">駅名：<%= nearstation.station %> 駅</li>
+    <li class = "subject">徒歩分数：<%= nearstation.minutes %> 分</li>
+    
 <% end %>
-
+<br>
+<%= link_to '一覧に戻る', houseinfos_path %> | <%= link_to '編集する', edit_houseinfo_path, data: { confirm: '本当に編集していいですか？' }  %>
 
